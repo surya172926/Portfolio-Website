@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Portfolio</title>
+
+  <style>
+
+    /* ===== BASE ===== */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body{
+      background-color:#ffffff;
+      color:#1f2933;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* ===== NAVBAR ===== */
+
+    header{
+      border-bottom:1px solid #e5e7eb;
+      padding:1rem 2rem;
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:100;
+    }
+
+    nav{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav h1{
+      font-size:1.4rem;
+      font-weight:700;
+      color:#2563eb;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:2rem;
+    }
+
+    nav ul li a{
+      font-weight:500;
+      color:#374151;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#2563eb;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero{
+      max-width:1100px;
+      margin:auto;
+      padding:5rem 2rem;
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:3rem;
+      align-items:center;
+    }
+
+    .hero h2{
+      font-size:2.8rem;
+      font-weight:700;
+      color:#111827;
+    }
+
+    .hero p{
+      margin:1.5rem 0;
+      color:#4b5563;
+      font-size:1.1rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:0.75rem 1.6rem;
+      background:#2563eb;
+      color:#fff;
+      border-radius:6px;
+      font-weight:600;
+      margin-top:10px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+    }
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:320px;
+      height:320px;
+      object-fit:cover;
+      border-radius:15px;
+      border:4px solid #2563eb;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ===== SECTION ===== */
+
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:4rem 2rem;
+    }
+
+    section h3{
+      font-size:2rem;
+      margin-bottom:1.5rem;
+      color:#111827;
+    }
+
+    /* ===== ABOUT ===== */
+
+    .about p{
+      max-width:700px;
+      color:#4b5563;
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:1.5rem;
+      background:#fafafa;
+    }
+
+    /* ===== SKILLS ===== */
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:1.5rem;
+    }
+
+    .skill-card{
+      border:1px solid #e5e7eb;
+      padding:1.5rem;
+      border-radius:8px;
+      background:#fafafa;
+      transition:0.3s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .skill-card h4{
+      margin-bottom:0.5rem;
+      color:#2563eb;
+    }
+
+    /* ===== PROJECTS ===== */
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:2rem;
+    }
+
+    .project-card{
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:1.5rem;
+      background:#fafafa;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .project-card h4{
+      margin-bottom:0.5rem;
+      color:#2563eb;
+    }
+
+    .project-card p{
+      color:#4b5563;
+      margin-bottom:1rem;
+    }
+
+    .project-card a{
+      color:#2563eb;
+      font-weight:600;
+    }
+
+    /* ===== CERTIFICATES ===== */
+
+    .Certificates-card{
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:1.5rem;
+      background:#fafafa;
+    }
+
+    .Certificates-card p{
+      margin-bottom:10px;
+      color:#4b5563;
+    }
+
+    /* ===== CONTACT ===== */
+
+    .contact-box{
+      border:1px solid #e5e7eb;
+      border-radius:8px;
+      padding:1.5rem;
+      background:#fafafa;
+    }
+
+    .contact-box p{
+      margin-bottom:12px;
+      color:#4b5563;
+    }
+
+    .contact-box a{
+      color:#2563eb;
+      font-weight:500;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer{
+      border-top:1px solid #e5e7eb;
+      text-align:center;
+      padding:1.5rem;
+      color:#6b7280;
+      margin-top:3rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+
+    @media (max-width:768px){
+
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-image img{
+        width:250px;
+        height:250px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+
+<header>
+
+  <nav>
+
+    <h1>POTNURU SURYAKIRAN</h1>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#Certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<!-- ===== HERO SECTION ===== -->
+
+<section class="hero">
+
+  <div>
+
+    <h2>Web Developer | Python Developer | Data Analyst</h2>
+
+    <p>
+      I build scalable, responsive, and user-focused web applications
+      using modern technologies and machine learning solutions.
+    </p>
+
+    <a href="#projects" class="btn">View Projects</a>
+
+  </div>
+
+  <div class="hero-image">
+
+    <img src="C:\\Users\\kiran\\OneDrive\\Pictures\\surya img.jpeg" alt="Surya Image">
+  </div>
+
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+
+<section id="about" class="about">
+
+  <h3>About Me</h3>
+
+  <p>
+    Seeking a position to utilize my skills and abilities in an
+    organization which offers growth in both professional and individual
+    career while being innovative, flexible, responsible and managing
+    challenging opportunities.
+  </p>
+
+</section>
+
+
+<!-- ===== SKILLS ===== -->
+
+<section id="skills">
+
+  <h3>Skills</h3>
+
+  <div class="skills">
+
+    <div class="skill-card">
+      <h4>Programming Languages</h4>
+      <p>Python</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Frontend</h4>
+      <p>HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Databases</h4>
+      <p>SQL</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Data Science</h4>
+      <p>Python, Pandas, NumPy, Matplotlib</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Machine Learning</h4>
+      <p>
+        Linear Regression, Logistic Regression,
+        Decision Tree, Random Forest,
+        Naive Bayes, KNN, SVM, K-Means
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Tools</h4>
+      <p>Git, GitHub, VS Code</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== PROJECTS ===== -->
+
+<section id="projects">
+
+  <h3>Projects</h3>
+
+  <div class="projects">
+
+    <div class="project-card">
+      <h4>SpaceNet Navigator</h4>
+
+      <p>
+        AI-driven framework for spacecraft trajectory optimization
+        using machine learning and evolutionary optimization techniques.
+      </p>
+
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h4>Medical Insurance Cost Prediction</h4>
+
+      <p>
+        Developed a machine learning model using
+        Linear Regression to predict insurance costs.
+      </p>
+
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h4>Credit Card Fraud Detection</h4>
+
+      <p>
+        Built a fraud detection system using Logistic Regression
+        and Random Forest algorithms.
+      </p>
+
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h4>Movie Ticket Reservation System</h4>
+
+      <p>
+        Developed a web application for booking movie tickets online.
+      </p>
+
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h4>Portfolio Platform</h4>
+
+      <p>
+        A portfolio website created to showcase projects,
+        skills, certifications, and contact information.
+      </p>
+
+      <a href="#">View Project</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== CERTIFICATES ===== -->
+
+<section id="Certificates">
+
+  <h3>Certificates</h3>
+
+  <div class="Certificates-card">
+
+    <p>
+      Certified on completing an internship on Web Development - Pantech.AI
+    </p>
+
+    <p>
+      Certified on completing a course on Python - CISCO Academy
+    </p>
+
+    <p>
+      Certified on completing a course on Python for Data Science - NPTEL
+    </p>
+
+    <p>
+      Certified on completing a course on Database Management System - NPTEL
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+
+<section id="contact">
+
+  <h3>Contact</h3>
+
+  <div class="contact-box">
+
+    <p>
+      Email:
+      <a href="mailto:kiransurya85131@gmail.com">
+        kiransurya85131@gmail.com
+      </a>
+    </p>
+
+    <p>
+      Mobile:
+      <a href="tel:9948045216">
+        9948045216
+      </a>
+    </p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/surya172926" target="_blank">
+        My GitHub
+      </a>
+    </p>
+
+    <p>
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/surya-potnuru-92a4292b3"
+         target="_blank">
+        My LinkedIn Profile
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+  © 2026 POTNURU SURYAKIRAN. All rights reserved.
+
+</footer>
+
+</body>
+</html>
